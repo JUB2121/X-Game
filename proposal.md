@@ -18,7 +18,9 @@ This will consist of a simple game where the goal is to press the X on the scree
 
 ## Challenges
 -Look and read pygame documentation to understand how to create simple menu and display text
+
 -Learn how to create collison with mouse and interaction with other objects on screen
+
 -Learn through pygame documentation how to control mouse input and display it on the screen
 
 ## Outcomes
