@@ -8,9 +8,11 @@ This will consist of a simple game where the goal is to press the X on the scree
 
 ## Features
 -Start/End Interactions
--Creating a simple menu where the user can start the game and quit the game in the same spot with state variables and updates
+-Creating a simple menu where the user can start the game and quit the game in the same spot with state variables and updates in pygame
+
 -Collison
 -Create collison on the screen to create obstacles for the users to complete the level with pygame.Rect and colliderect()
+
 -Mouse Input
 -Track user mouse movement with pygame.mousemovement both up/down, displayed as a sprite
 
