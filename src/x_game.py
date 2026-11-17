@@ -9,12 +9,24 @@ pygame.display.set_caption("X-game")
 state = "menu"
 running = True
 
-while running:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            running = False
+play_text = font.render("Play", True, (0, 200, 0))
+close_text = font.render("Close", True, (220, 0, 0))
+play_rect = play_text.get_rect(center =(400, 250))
+close_rect= play_text.get_rect(center =(400, 350))
+
+def main():
+    while running:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                running = False
         if event.type == pygame.MOUSEBUTTONDOWN and state == "menu":
-            screen.fill((30, 30, 30))
+            if play_rect.collidepoint(event.pos):
+                state = "playing"
+            elif close_rect.collidepoint(event.pos):
+                running = False
+    
+    
+    screen.fill((30, 30, 30))
     pygame.display.flip()
     clock.tick(60)
 pygame.quit
