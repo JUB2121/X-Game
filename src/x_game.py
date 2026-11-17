@@ -27,6 +27,10 @@ def main():
     
     
     screen.fill((30, 30, 30))
+
+    if state == "menu":
+        screen.blit(play_text, play_rect)
+        screen.blit(close_text, close_rect)
     pygame.display.flip()
     clock.tick(60)
 pygame.quit
