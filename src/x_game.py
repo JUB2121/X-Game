@@ -4,6 +4,7 @@ pygame.init()
 screen = pygame.display.set_mode((800,600))
 font = pygame.font.SysFont(None, 48)
 clock = pygame.time.Clock()
+pygame.display.set_caption("X-game")
 
 state = "menu"
 running = True
