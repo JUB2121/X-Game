@@ -3,10 +3,12 @@ import pygame
 pygame.init()
 screen = pygame.display.set_mode((800,600))
 font = pygame.font.SysFont(None, 48)
+title_font = pygame.font.SysFont(None, 96)
 clock = pygame.time.Clock()
 pygame.display.set_caption("X-game")
 
 
+title_text = title_font.render("X-Game", True, (255, 255, 255))
 play_text = font.render("Play", True, (0, 200, 0))
 close_text = font.render("Close", True, (220, 0, 0))
 play_rect = play_text.get_rect(center = (400, 250))
