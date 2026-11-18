@@ -5,6 +5,7 @@ screen = pygame.display.set_mode((800,600))
 font = pygame.font.SysFont(None, 48)
 title_font = pygame.font.SysFont(None, 96)
 clock = pygame.time.Clock()
+mouse_position = pygame.mouse.get_pos()
 pygame.display.set_caption("X-game")
 
 
@@ -18,6 +19,7 @@ close_rect= play_text.get_rect(center = (400, 350))
 def main():
     state = "menu"
     running = True
+    pygame.draw.circle(screen, 'red', mouse_position, 10)
     
     while running:
         for event in pygame.event.get():
