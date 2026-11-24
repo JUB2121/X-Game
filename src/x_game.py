@@ -18,7 +18,7 @@ play_rect = play_text.get_rect(center = (400, 250))
 close_rect = close_text.get_rect(center = (400, 350))
 
 
-x_text = x_font.render("X", True (255, 255, 255))
+x_text = x_font.render("X", True, (255, 255, 255))
 win_text = font.render("Level 1 is complete!", True, (255, 255, 255))
 win_rect = win_text.get_rect(center=(400, 300))
 
@@ -30,26 +30,42 @@ def rand_x():
 def main():
     state = "menu"
     running = True
+    x_rect = rand_x()
+    
     while running:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
-            if event.type == pygame.MOUSEBUTTONDOWN and state == "menu":
-                if play_rect.collidepoint(event.pos):
-                    state = "playing"
-                elif close_rect.collidepoint(event.pos):
-                    running = False
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                    if state == "menu":
+                         if play_rect.collidepoint(event.pos):
+                              x_rect = rand_x()
+                              state = "Level 1"
+                    elif close_rect.collidepoint(event.pos):
+                        running = False
+                    elif state == "Level 1":
+                         if x_rect.collidepoint(event.pos):
+                              state = "Level 1 Complete!"
+                    elif state == "Level 1 Complete!":
+                         state = "menu"
+
     
     
         screen.fill((30, 30, 30))
-        mouse_position = pygame.mouse.get_pos()
-        pygame.draw.circle(screen, 'red', mouse_position, 10)
-
-
         if state == "menu":
             screen.blit(title_text, title_rect)
             screen.blit(play_text, play_rect)
             screen.blit(close_text, close_rect)
+        elif state == "Level 1":
+            screen.blit(x_text, x_rect)
+        elif state == "Level 1 Complete!":
+            screen.blit(win_text, win_rect)
+             
+             
+        
+        mouse_position = pygame.mouse.get_pos()
+        pygame.draw.circle(screen, 'red', mouse_position, 10)
+        
         pygame.display.flip()
         clock.tick(60)
     pygame.quit()
