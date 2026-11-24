@@ -41,10 +41,10 @@ def main():
                          if play_rect.collidepoint(event.pos):
                               x_rect = rand_x()
                               state = "Level 1"
-                    elif close_rect.collidepoint(event.pos):
-                        running = False
+                         elif close_rect.collidepoint(event.pos):
+                            running = False
                     elif state == "Level 1":
-                         if x_rect.collidepoint(event.pos):
+                        if x_rect.collidepoint(event.pos):
                               state = "Level 1 Complete!"
                     elif state == "Level 1 Complete!":
                          state = "menu"
