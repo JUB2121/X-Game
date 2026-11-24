@@ -1,4 +1,5 @@
 import pygame
+import random
 
 pygame.init()
 screen = pygame.display.set_mode((800,600))
@@ -8,6 +9,7 @@ clock = pygame.time.Clock()
 pygame.display.set_caption("X-game")
 
 
+def make_label
 title_text = title_font.render("X-Game", True, (255, 215, 0))
 play_text = font.render("Play", True, (0, 200, 0))
 close_text = font.render("Close", True, (220, 0, 0))
