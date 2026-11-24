@@ -1,21 +1,31 @@
-import pygame
 import random
+import pygame
 
 pygame.init()
 screen = pygame.display.set_mode((800,600))
 font = pygame.font.SysFont(None, 48)
 title_font = pygame.font.SysFont(None, 96)
+x_font = pygame.font.SysFont(None, 120)
 clock = pygame.time.Clock()
 pygame.display.set_caption("X-game")
 
 
-def make_label
 title_text = title_font.render("X-Game", True, (255, 215, 0))
 play_text = font.render("Play", True, (0, 200, 0))
 close_text = font.render("Close", True, (220, 0, 0))
 title_rect = title_text.get_rect(center = (400, 120))
 play_rect = play_text.get_rect(center = (400, 250))
 close_rect = close_text.get_rect(center = (400, 350))
+
+
+x_text = x_font.render("X", True (255, 255, 255))
+win_text = font.render("Level 1 is complete!", True, (255, 255, 255))
+win_rect = win_text.get_rect(center=(400, 300))
+
+def rand_x():
+    rect = x_text.get_rect()
+    rect.center = (random.randint(80, 720), random.randint(80, 520))
+    return rect
 
 def main():
     state = "menu"
