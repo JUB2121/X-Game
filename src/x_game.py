@@ -2,6 +2,12 @@ import random
 import pygame
 
 pygame.init()
+
+width, height = 800, 600
+Mouse_radius = 10
+radius = 20
+
+
 screen = pygame.display.set_mode((800,600))
 font = pygame.font.SysFont(None, 48)
 title_font = pygame.font.SysFont(None, 96)
@@ -19,8 +25,12 @@ close_rect = close_text.get_rect(center = (400, 350))
 
 
 x_text = x_font.render("X", True, (255, 255, 255))
-win_text = font.render("Level 1 is complete!", True, (255, 255, 255))
-win_rect = win_text.get_rect(center=(400, 300))
+win1_text = font.render(
+     "Level 1 is complete! Click for Level 2", True, (255, 255, 255))
+win1_rect = win1_text.get_rect(center=(400, 300))
+win2_text = font.render(
+     "Level 2 is complete!", True, (255, 255,255))
+win2_text = win2_text.get_rect(center=(400,300))
 
 def rand_x():
     rect = x_text.get_rect()
@@ -48,6 +58,7 @@ def main():
                               state = "Level 1 Complete!"
                     elif state == "Level 1 Complete!":
                          state = "menu"
+    
 
     
     
@@ -59,7 +70,7 @@ def main():
         elif state == "Level 1":
             screen.blit(x_text, x_rect)
         elif state == "Level 1 Complete!":
-            screen.blit(win_text, win_rect)
+            screen.blit(win1_text, win1_rect)
              
              
         
